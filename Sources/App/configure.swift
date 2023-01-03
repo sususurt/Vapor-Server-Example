@@ -4,7 +4,7 @@ import Leaf
 import Vapor
 
 // configures your application
-public func configure(_ app: Application) throws {
+public func configure(_ app: Application) async throws {
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
@@ -16,11 +16,13 @@ public func configure(_ app: Application) throws {
         database: Environment.get("DATABASE_NAME") ?? "vapor_database"
     ), as: .psql)
 
-    app.migrations.add(CreateTodo())
+    app.migrations.add(CreatePersons())
+    try await app.autoMigrate()
 
     app.views.use(.leaf)
 
-    
+    // logger level
+//    app.logger.logLevel = .debug
 
     // register routes
     try routes(app)
