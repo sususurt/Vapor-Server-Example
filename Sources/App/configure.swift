@@ -16,7 +16,7 @@ public func configure(_ app: Application) async throws {
         database: Environment.get("DATABASE_NAME") ?? "vapor_database"
     ), as: .psql)
 
-    app.migrations.add(CreatePersons())
+    app.migrations.add(CreateLocations())
     try await app.autoMigrate()
 
     app.views.use(.leaf)
