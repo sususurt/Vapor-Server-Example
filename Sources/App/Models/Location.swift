@@ -14,11 +14,14 @@ final class Location: Model, Content {
     @ID(key: .id)
     var id: UUID?
 
+    @Timestamp(key: "created_at", on: .create)
+    var createdAt: Date?
+
+    @Timestamp(key: "updated_at", on: .update)
+    var updatedAt: Date?
+
     @Field(key: "label")
     var label: String
-
-    @Field(key: "timestamp")
-    var timestamp: TimeInterval
 
     @Field(key: "latitude")
     var latitude: String

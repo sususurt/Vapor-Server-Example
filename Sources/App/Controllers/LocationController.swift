@@ -47,7 +47,6 @@ struct LocationController: RouteCollection {
         }
 
         locationToUpdate.label = location.label
-        locationToUpdate.timestamp = location.timestamp
         locationToUpdate.altitude = location.altitude
         locationToUpdate.longgitude = location.longgitude
         locationToUpdate.latitude = location.latitude
@@ -89,10 +88,6 @@ struct LocationController: RouteCollection {
 
         if let newLabel = patch.label {
             locationToUpdate.label = newLabel
-        }
-
-        if let newTimestamp = patch.timestamp {
-            locationToUpdate.timestamp = newTimestamp
         }
 
         if let newLatitude = patch.latitude {
