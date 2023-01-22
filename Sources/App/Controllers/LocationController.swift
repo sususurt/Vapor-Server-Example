@@ -48,7 +48,7 @@ struct LocationController: RouteCollection {
 
         locationToUpdate.label = location.label
         locationToUpdate.altitude = location.altitude
-        locationToUpdate.longgitude = location.longgitude
+        locationToUpdate.longitude = location.longitude
         locationToUpdate.latitude = location.latitude
 
         try await locationToUpdate.save(on: req.db)
@@ -94,8 +94,8 @@ struct LocationController: RouteCollection {
             locationToUpdate.latitude = newLatitude
         }
 
-        if let newLonggitude = patch.longgitude {
-            locationToUpdate.longgitude = newLonggitude
+        if let newLongitude = patch.longitude {
+            locationToUpdate.longitude = newLongitude
         }
 
         if let newAltitude = patch.altitude {

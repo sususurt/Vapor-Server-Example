@@ -16,7 +16,7 @@ struct CreateLocations: AsyncMigration {
             .field("created_at", .datetime)
             .field("updated_at", .datetime)
             .field("latitude", .string, .required)
-            .field("longgitude", .string, .required)
+            .field("longitude", .string, .required)
             .field("altitude", .string, .required)
             .create()
     }

@@ -26,19 +26,19 @@ final class Location: Model, Content {
     @Field(key: "latitude")
     var latitude: String
 
-    @Field(key: "longgitude")
-    var longgitude: String
+    @Field(key: "longitude")
+    var longitude: String
 
     @Field(key: "altitude")
     var altitude: String
 
     init() { }
 
-    init(id: UUID? = nil, label: String, latitude: String, longgitude: String, altitude: String) {
+    init(id: UUID? = nil, label: String, latitude: String, longitude: String, altitude: String) {
         self.id = id
         self.label = label
         self.latitude = latitude
-        self.longgitude = longgitude
+        self.longitude = longitude
         self.altitude = altitude
     }
 }
@@ -49,6 +49,6 @@ struct PatchLocation: Decodable {
     var timestamp: TimeInterval?
     /// DATA
     let latitude: String?
-    let longgitude: String?
+    let longitude: String?
     let altitude: String?
 }
